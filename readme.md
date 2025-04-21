@@ -158,3 +158,8 @@ contract SimpleStorage{
     }
 }
 ```
+
+12. Withdraw method
+* Transfer: gas-limit:2300,return: None,Reverts on failure: Yes,Notes: simple safe but limited.
+* Send: gas-limit:2300,return: Bool ,Reverts on failure: No,Notes: must manually check success.
+* Call: gas-limit:no-limit,return: Bool,bytes ,Reverts on failure: No,Notes: Most flexible, recommended way now.
