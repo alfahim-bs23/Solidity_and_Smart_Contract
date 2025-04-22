@@ -158,8 +158,31 @@ contract SimpleStorage{
     }
 }
 ```
+11. Payable: The payable keyword marks a function or address as capable of receiving Ether.
+
+11. msg.sender: msg is a global variable that have various methods available to it.
+msg.sender means whom ever is currently interacting with the contract.
 
 12. Withdraw method
 * Transfer: gas-limit:2300,return: None,Reverts on failure: Yes,Notes: simple safe but limited.
 * Send: gas-limit:2300,return: Bool ,Reverts on failure: No,Notes: must manually check success.
 * Call: gas-limit:no-limit,return: Bool,bytes ,Reverts on failure: No,Notes: Most flexible, recommended way now.
+
+12. Library: A library is like a helper contract. It contains reusable functions that can be called from other contracts.
+* They cannot hold state (i.e., no storage variables).
+* You can’t inherit from them or create instances.
+* They're used to extend contracts or add utility functions (like math, string handling, etc.). 
+
+12. Receive function: I send eth but didn't call any function.Ex: I just sent eth with metamask but didn't call any function.
+
+13. Fallback function: I send eth but the function i called don't exixts.
+
+14. The immutable keyword is used to declare a state variable that:
+* Can only be assigned once, usually inside the constructor.
+* Cannot be changed afterward.
+* Is stored directly in the bytecode (like constant), which saves gas.
+
+15. A modifier is like a gatekeeper or middleware for functions.It lets you:
+* Add pre-checks before a function runs
+* Reuse common logic (like access control)
+* Keep your code DRY (Don’t Repeat Yourself)
