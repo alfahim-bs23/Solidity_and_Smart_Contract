@@ -186,3 +186,11 @@ msg.sender means whom ever is currently interacting with the contract.
 * Add pre-checks before a function runs
 * Reuse common logic (like access control)
 * Keep your code DRY (Don’t Repeat Yourself)
+
+15. Events: Events in Solidity are a way for your smart contract to log information that the outside world (like frontend apps or off-chain services) can listen to.
+* Think of it like a console log, but on the blockchain.
+* When an event is emitted, it gets stored in the transaction logs, which are:cheaper to store than actual contract storage.
+You can use events in solidity as cheap form of storage.
+
+16. Transfer(event): its an special event that will listen for any kinds of transfer events in you dApp.
+
