@@ -194,3 +194,4 @@ You can use events in solidity as cheap form of storage.
 
 24. Transfer(event): its an special event that will listen for any kinds of transfer events in you dApp.
 
+25. Solidity functions that change state cannot return values to the caller in the context of a transaction.
