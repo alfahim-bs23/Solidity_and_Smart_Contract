@@ -8,6 +8,8 @@ error NotOwner();
 // main contract
 contract FundMe{
 
+    using PriceConverter for uint256;
+
     uint256 public constant MINIMUM_USD=50*1e18;
 
     mapping(address=>uint256) funderToAmount;
@@ -24,7 +26,7 @@ contract FundMe{
     // this will automatically handle the transaction(getting eth) because of payable keyword.
     // this store the funded eth to contract address
     function fund() public payable{
-        require(PriceConverter.getConversionRate(msg.value)>=MINIMUM_USD,"You didn't send enough eth.");
+        require(msg.value.getConversionRate()>=MINIMUM_USD,"You didn't send enough eth.");
         funderToAmount[msg.sender]+=msg.value;
         funders.push(msg.sender);
     }
